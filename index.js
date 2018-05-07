@@ -78,7 +78,7 @@ function makeDessert() {
   else
   {
       var pieDiv = document.getElementById("pie");
-      makePie.call(element);
+      makePie.call(pieDiv);
   }
 }
 
