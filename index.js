@@ -70,7 +70,7 @@ function makeDessert() {
   //add code here to decide which make... function to call
   //based on which link was clicked
   var element = this;
-  if (element.innerText === 'Make Cake')
+  if (element.innerText == 'Make Cake')
   {
       var cakeDiv = document.getElementById("cake");
       makeCake.call(cakeDiv);
