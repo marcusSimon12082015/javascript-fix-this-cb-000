@@ -40,15 +40,18 @@ function updateStatus(statusText) {
 
 function bake(updateFunction) {
   var status = "Baking at " + this.bakeTemp + " for " + this.bakeTime
+  var element = this;
   setTimeout(function() {
-    cool(updateFunction)
+    cool.call(element,updateFunction)
   }, 2000)
+  updateFunction(status)
 }
 
 function mix(updateFunction) {
   var status = "Mixing " + this.ingredients.join(", ")
+  var element = this;
   setTimeout(function() {
-    bake(updateFunction)
+    bake.call(element,updateFunction)
   }, 2000)
   updateFunction(status)
 }
