@@ -24,13 +24,14 @@ var pie = {
 }
 
 function makeCake() {
-  var updateCakeStatus;
-  mix(updateCakeStatus)
+  var updateCakeStatus = updateStatus.bind(this);
+  mix.call(cake,updateCakeStatus)
 }
 
 function makePie() {
-  var updatePieStatus;
-  mix(updatePieStatus)
+  var updatePieStatus = updateStatus.bind(this);
+  pie.decorate = cake.decorate.bind(pie);
+  mix.call(pie,updatePieStatus)
 }
 
 function updateStatus(statusText) {
@@ -65,7 +66,7 @@ function makeDessert() {
   var element = this;
   if (element.innerText.indexOf('Cake') != -1)
   {
-      var cakeDiv = document.getElementById("cake"); 
+      var cakeDiv = document.getElementById("cake");
       makeCake.call(cakeDiv);
   }
   else
