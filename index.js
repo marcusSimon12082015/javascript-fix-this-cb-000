@@ -73,13 +73,12 @@ function makeDessert() {
   if (element.innerText === 'Make Cake')
   {
       var cakeDiv = document.getElementById("cake");
-      makeCake.call(cakeDiv);
+      makeCake.call(element);
   }
   else
   {
       var pieDiv = document.getElementById("pie");
-      pie.decorate = cake.decorate.bind(pieDiv);
-      makePie.call(pie);
+      makePie.call(element);
   }
 }
 
