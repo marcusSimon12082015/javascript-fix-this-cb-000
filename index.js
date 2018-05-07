@@ -73,7 +73,7 @@ function makeDessert() {
   if (element.innerText === 'Make Cake')
   {
       var cakeDiv = document.getElementById("cake");
-      makeCake.call(element);
+      makeCake.call(cakeDiv);
   }
   else
   {
