@@ -7,9 +7,10 @@ var cake = {
   customer: "Tommy",
   decorate: function(updateFunction) {
     var status = "Decorating with " + this.topping + ". Ready to eat soon!"
+    var element = this;
     updateFunction(status)
     setTimeout(function() {
-      updateFunction(serve.apply(this, "Happy Eating!", this.customer))
+      updateFunction(serve.apply(element, ["Happy Eating!", element.customer]))
     }, 2000)
   }
 }
