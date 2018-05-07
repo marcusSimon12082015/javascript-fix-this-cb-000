@@ -62,6 +62,18 @@ function cool(updateFunction) {
 function makeDessert() {
   //add code here to decide which make... function to call
   //based on which link was clicked
+  var element = this;
+  if (element.innerText.indexOf('Cake') != -1)
+  {
+      var cakeDiv = document.getElementById("cake"); 
+      makeCake.call(cakeDiv);
+  }
+  else
+  {
+      var pieDiv = document.getElementById("pie");
+      pie.decorate = cake.decorate.bind(pieDiv);
+      makePie.call(pie);
+  }
 }
 
 function serve(message, customer) {
